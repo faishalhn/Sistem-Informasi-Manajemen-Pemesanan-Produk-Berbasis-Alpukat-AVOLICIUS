@@ -1,0 +1,183 @@
+/*
+==========================================================
+FILE        : avolicius.css
+PROJECT     : AVOLICIUS
+DESCRIPTION : Global Style
+VERSION     : 1.0.0
+AUTHOR      : Kelompok AVOLICIUS
+==========================================================
+*/
+
+/* ==========================================================
+   GOOGLE FONT
+========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root {
+  --primary: #4caf50;
+  --primary-dark: #2e7d32;
+
+  --secondary: #8bc34a;
+
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+
+  --light: #f8f9fa;
+  --dark: #212529;
+
+  --text: #444444;
+
+  --white: #ffffff;
+
+  --radius: 16px;
+
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  background: #f8faf5;
+
+  color: var(--text);
+}
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.btn-avolicius {
+  background: var(--primary);
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 12px 24px;
+
+  transition: 0.3s;
+}
+
+.btn-avolicius:hover {
+  background: var(--primary-dark);
+
+  color: #fff;
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.card {
+  border: none;
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow);
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.form-control {
+  border-radius: 12px;
+
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+
+  box-shadow: none;
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.section-title {
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+img {
+  max-width: 100%;
+}
+
+/* ==========================================================
+   LOGIN
+========================================================== */
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #f8faf5;
+}
+
+.login-card {
+  width: 420px;
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow);
+}
+
+.login-logo {
+  width: 90px;
+}
+
+.login-title {
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+.login-subtitle {
+  color: #777;
+
+  margin-bottom: 25px;
+}
