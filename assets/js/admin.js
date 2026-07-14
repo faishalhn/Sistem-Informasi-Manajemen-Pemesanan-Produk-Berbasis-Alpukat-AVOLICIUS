@@ -453,10 +453,18 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         },
       )
-        .then((response) => response.json())
-
         .then((data) => {
           loading.classList.add("d-none");
+
+          content.innerHTML = "";
+
+          if (!Array.isArray(data) || data.length === 0) {
+            empty.classList.remove("d-none");
+
+            return;
+          }
+
+          empty.classList.add("d-none");
 
           render(data);
         })
@@ -466,7 +474,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
           loading.classList.add("d-none");
 
+          content.innerHTML = "";
+
           empty.classList.remove("d-none");
+
+          empty.innerHTML = `
+
+        <div class="text-center py-4">
+
+            <i class="bi bi-wifi-off fs-2 text-danger"></i>
+
+            <div class="fw-semibold mt-2">
+
+                Gagal terhubung ke server
+
+            </div>
+
+            <small class="text-muted">
+
+                Periksa koneksi atau coba beberapa saat lagi.
+
+            </small>
+
+        </div>
+
+    `;
         });
     }, 250);
   });
