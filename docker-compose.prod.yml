@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  avolicius-app:
+    image: ghcr.io/yerry888/sistem-informasi-manajemen-pemesanan-produk-berbasis-alpukat-avolicius-be:v1.0.0
+
+    container_name: avolicius-app
+
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    env_file:
+      - .env.production
+
+    depends_on:
+      - mysql
+
+    networks:
+      - avolicius-network
+
+  mysql:
+    image: mysql:8.0
+
+    container_name: avolicius-db
+
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+
+    volumes:
+      - mysql-prod-data:/var/lib/mysql
+
+    networks:
+      - avolicius-network
+
+volumes:
+  mysql-prod-data:
+
+networks:
+  avolicius-network:
+    driver: bridge
