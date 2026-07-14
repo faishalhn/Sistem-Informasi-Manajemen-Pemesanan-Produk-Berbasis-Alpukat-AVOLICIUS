@@ -1,11 +1,12 @@
 # Environment Variables
 .env
-
+.env.*
 # Python Cache
 __pycache__/
 
 # Log Files
 *.log
+logs/*.log
 
 # IDE
 .vscode/
@@ -14,3 +15,4 @@ __pycache__/
 # OS Files
 .DS_Store
 Thumbs.db
+
