@@ -11,39 +11,26 @@
  */
 
 if (APP_ENV === 'development') {
-
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 }
 
-$host = "localhost";
+$host = getenv('DB_HOST') ?: 'localhost';
 
-$username = "root";
+$username = getenv('DB_USERNAME') ?: getenv('DB_USER') ?: 'root';
 
-$password = "";
+$password = getenv('DB_PASSWORD') ?: getenv('DB_PASS') ?: '';
 
-$database = "avolicius_db";
+$database = getenv('DB_DATABASE') ?: getenv('DB_NAME') ?: 'avolicius_db';
 
 $db = mysqli_connect(
-
     $host,
-
     $username,
-
     $password,
-
     $database
-
 );
 
 if (!$db) {
-
     die("Koneksi database gagal.");
 }
 
-mysqli_set_charset(
-
-    $db,
-
-    "utf8mb4"
-
-);
+mysqli_set_charset($db, "utf8mb4");

@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   avolicius-app:
     image: ghcr.io/yerry888/sistem-informasi-manajemen-pemesanan-produk-berbasis-alpukat-avolicius-be:v1.0.0
